@@ -30,6 +30,7 @@ Plug 'rakr/vim-one'
 Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-devicons'
+Plug 'tpope/vim-commentary'
 call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""
 

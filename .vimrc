@@ -6,6 +6,7 @@ set softtabstop=2
 set shiftwidth=2
 set scrolloff=999
 set nocompatible
+set encoding=UTF-8 "for vim-devicons
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Statusline
@@ -19,12 +20,16 @@ set noshowmode
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 call plug#begin()
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree' |
+            \ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy finder
 Plug 'sheerun/vim-polyglot' " for better hightlight
 Plug 'itchyny/lightline.vim'
 "Plug 'joshdick/onedark.vim'
 Plug 'rakr/vim-one'
+Plug 'jiangmiao/auto-pairs'
+Plug 'airblade/vim-gitgutter'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""
 

@@ -23,14 +23,17 @@ call plug#begin()
 Plug 'scrooloose/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy finder
+Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot' " for better hightlight
 Plug 'itchyny/lightline.vim'
 "Plug 'joshdick/onedark.vim'
 Plug 'rakr/vim-one'
 Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-commentary'
+Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -72,6 +75,6 @@ let mapleader = " "
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>e :NERDTreeToggle<CR>
-nnoremap <Leader>ff :FZF<CR>
+nnoremap <Leader>ff :Files<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""
 

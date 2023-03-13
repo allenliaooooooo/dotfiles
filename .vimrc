@@ -64,9 +64,9 @@ syntax on
 set bg=dark
 "colorscheme risto
 "colorscheme onedark
-let g:one_allow_italics=1
+" let g:one_allow_italics=1
 colorscheme one
-highlight Comment cterm=italic
+" highlight Comment cterm=italic
 """""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""

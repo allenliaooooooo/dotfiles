@@ -1,5 +1,5 @@
 set cursorline
-set number
+set number relativenumber
 set hlsearch
 set tabstop=2
 set softtabstop=2
@@ -7,6 +7,8 @@ set shiftwidth=2
 set scrolloff=999
 set nocompatible
 set encoding=UTF-8 "for vim-devicons
+set nofoldenable
+set foldmethod=indent
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Statusline

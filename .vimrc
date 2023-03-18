@@ -36,6 +36,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-commentary'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'ycm-core/YouCompleteMe'
 call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""
 

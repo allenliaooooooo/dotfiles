@@ -9,3 +9,9 @@ $ ln -b -S '.backup' -sv ~/dotfiles/.vimrc ~/.vimrc
 $ mv ~/.vim ~/.vim.backup
 $ ln -sv ~/dotfiles/.vim/ ~/.vim
 ```
+
+## Plugins
+
+- YouCompleteMe
+
+Please follow the [Installation document](https://github.com/ycm-core/YouCompleteMe#installation) to install.

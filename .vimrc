@@ -6,17 +6,16 @@ set softtabstop=2
 set shiftwidth=2
 set scrolloff=999
 set nocompatible
-set encoding=UTF-8 "for vim-devicons
-set nofoldenable
+set encoding=UTF-8 " for vim-devicons
+set nofoldenable " disable pre-folding
 set foldmethod=indent
+set signcolumn=yes " make the sign beside the line-number always appears
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Statusline
 set laststatus=2
 set noshowmode
-"let g:lightline = {
-"  \ 'colorscheme': 'onedark',
-"  \ }
 """""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""
@@ -28,7 +27,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy finder
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot' " for better hightlight
 Plug 'itchyny/lightline.vim'
-"Plug 'joshdick/onedark.vim'
 Plug 'rakr/vim-one'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
@@ -36,12 +34,13 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-commentary'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'ycm-core/YouCompleteMe'
+"Plug 'ycm-core/YouCompleteMe'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""
-" true color setting
+" True color setting
 " source: https://github.com/rakr/vim-one#true-color-support
 "Credit joshdick
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
@@ -66,7 +65,6 @@ endif
 syntax on
 set bg=dark
 "colorscheme risto
-"colorscheme onedark
 " let g:one_allow_italics=1
 colorscheme one
 " highlight Comment cterm=italic
@@ -79,5 +77,51 @@ nnoremap <Leader>q :q<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>e :NERDTreeToggle<CR>
 nnoremap <Leader>ff :Files<CR>
+"""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" coc.nvim setting
+let g:coc_disable_startup_warning = 1 " Disable the warning about the vim version is too old for coc.nvim, consider to upgrade the vim instead
+
+" Use tab for trigger completion with characters ahead and navigate
+" NOTE: There's always complete item selected by default, you may want to enable
+" no select by `"suggest.noselect": true` in your configuration file
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+"""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" NERDTree settint
+" Start NERDTree when Vim is started without file arguments.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 """""""""""""""""""""""""""""""""""""""""""""""""
 

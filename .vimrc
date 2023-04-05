@@ -33,6 +33,7 @@ Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-commentary'
+Plug 'storyn26383/vim-vue'
 Plug 'terryma/vim-multiple-cursors'
 "Plug 'ycm-core/YouCompleteMe'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -74,8 +75,8 @@ colorscheme one
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Keymaps
 let mapleader = " "
-nnoremap <Leader>q :q<CR>
-nnoremap <Leader>w :w<CR>
+"nnoremap <Leader>q :q<CR>
+"nnoremap <Leader>w :w<CR>
 nnoremap <Leader>e :NERDTreeToggle<CR>
 nnoremap <Leader>ff :Files<CR>
 nnoremap <Leader>md :MarkdownPreviewToggle<CR>

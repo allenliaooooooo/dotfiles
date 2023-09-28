@@ -1,9 +1,18 @@
+## VSCode
+
+Backup your current `settings.json` and `keybindings.json` before run the following command.
+
+```sh
+ln -sv ~/dotfiles/VSCode/settings.json /<vscode-path>/settings.json
+ln -sv ~/dotfiles/VSCode/keybindings.json /<vscode-path>/keybindings.json
+```
+
 ## AstroNvim
 
 Install AstroNvim then run:
 
-```
-$ ln -sv ~/dotfiles/astroNvim/.config/nvim/lua/user  ~/.config/nvim/lua/user
+```sh
+ln -sv ~/dotfiles/astroNvim/.config/nvim/lua/user  ~/.config/nvim/lua/user
 ```
 
 ### ColorScheme
@@ -22,10 +31,10 @@ Please see: https://alexpearce.me/2014/05/italics-in-iterm2-vim-tmux/ and https:
 
 In some cases, when type <backspace> will produce a space. It's seems that the $TERM causing the issue. I don't know how to fix it yet.
 
-```
-$ ln -b -S '.backup' -sv ~/dotfiles/.vimrc ~/.vimrc
-$ mv ~/.vim ~/.vim.backup
-$ ln -sv ~/dotfiles/.vim/ ~/.vim
+```sh
+ln -b -S '.backup' -sv ~/dotfiles/.vimrc ~/.vimrc
+mv ~/.vim ~/.vim.backup
+ln -sv ~/dotfiles/.vim/ ~/.vim
 ```
 
 ### Plugins

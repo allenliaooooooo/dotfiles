@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# 替換成你的 Git 用戶名
+MY_USERNAME="allen.liao"
+
+# 指定要檢查的文件列表(把檔案放在要打 git merge 的路徑)
+FILES_TO_CHECK=($(cat files_to_check.txt))
+
+# 函數檢查文件的最後提交者
+check_last_committer() {
+    for file in "${FILES_TO_CHECK[@]}"; do
+        # 獲取最後一次提交該文件的用戶名
+        LAST_COMMITTER=$(git log -1 --pretty=format:'%an' -- "$file")
+
+        # 比較提交者和你的用戶名
+        if [ "$LAST_COMMITTER" != "$MY_USERNAME" ]; then
+            echo "領域已被侵犯: $file (最後提交者: $LAST_COMMITTER)"
+        fi
+    done
+}
+
+# 執行檢查
+check_last_committer
+

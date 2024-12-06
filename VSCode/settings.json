@@ -1,197 +1,194 @@
 {
-    "windsurf.autocompleteSpeed": "fast",
-    "editor.rulers": [100, 120],
-    "editor.fontFamily": "FiraCode Nerd Font, Menlo, Monaco, 'Courier New', monospace",
-    "editor.cursorBlinking": "smooth",
-    "editor.cursorSmoothCaretAnimation": "on",
-    "editor.stickyScroll.enabled": true,
-    "editor.tabSize": 2,
-    "editor.cursorSurroundingLines": 999,
-    "editor.accessibilitySupport": "off",
-    "editor.lineNumbers": "relative",
-    "editor.suggest.insertMode": "replace",
+  "windsurf.autocompleteSpeed": "fast",
+  "editor.rulers": [100, 120],
+  "editor.fontFamily": "FiraCode Nerd Font, Menlo, Monaco, 'Courier New', monospace",
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.stickyScroll.enabled": true,
+  "editor.tabSize": 2,
+  "editor.cursorSurroundingLines": 999,
+  "editor.accessibilitySupport": "off",
+  "editor.lineNumbers": "relative",
+  "editor.suggest.insertMode": "replace",
 
-    "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.ignoreTrimWhitespace": false,
 
-    "workbench.iconTheme": "catppuccin-frappe",
-    "workbench.tree.indent": 15,
-    "workbench.tree.renderIndentGuides": "always",
-    "workbench.colorCustomizations": {
-        "tree.indentGuidesStroke": "#05ef3c"
+  "workbench.iconTheme": "catppuccin-frappe",
+  "workbench.tree.indent": 15,
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.colorCustomizations": {
+    "tree.indentGuidesStroke": "#05ef3c"
+  },
+  "workbench.colorTheme": "Catppuccin Frappé",
+
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    }
+  },
+  "ruff.organizeImports": true,
+  "ruff.lint.args": ["--config", "pyproject.toml"],
+  "ruff.format.args": ["--config", "pyproject.toml"],
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "terminal.integrated.env.linux": {},
+  "vue.updateImportsOnFileMove.enabled": true,
+  "window.commandCenter": true,
+
+  "turboConsoleLog.delimiterInsideMessage": "-",
+  "turboConsoleLog.quote": "'",
+  "turboConsoleLog.includeFileNameAndLineNum": false,
+
+  "vim.leader": " ",
+  "vim.easymotion": true,
+  "vim.easymotionMarkerBackgroundColor": "#FBD87F",
+  "vim.easymotionMarkerFontWeight": "bold",
+  "vim.easymotionMarkerForegroundColorOneChar": "#DE0079",
+  "vim.easymotionKeys": "hklyuiopnmqwertzxcvbasdgjf",
+  "vim.useSystemClipboard": true,
+  "vim.foldfix": true,
+  "vim.hlsearch": true,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "rgba(230, 97, 89, 0.7)",
+  "vim.highlightedyank.textColor": "white",
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["leader", "k"],
+      "commands": ["editor.action.showHover"]
     },
-    "workbench.colorTheme": "Catppuccin Frappé",
-
-    "[python]": {
-        "editor.defaultFormatter": "charliermarsh.ruff",
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-          "source.fixAll": "explicit",
-          "source.organizeImports": "explicit"
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prev"]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
+    },
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<space>"],
+      "commands": ["vspacecode.space"]
+    },
+    {
+      "before": [","],
+      "commands": [
+        "vspacecode.space",
+        {
+          "command": "whichkey.triggerKey",
+          "args": "m"
         }
+      ]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<space>"],
+      "commands": ["vspacecode.space"]
     },
-    "ruff.organizeImports": true,
-    "ruff.lint.args": ["--config", "pyproject.toml"],
-    "ruff.format.args": ["--config", "pyproject.toml"],
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-
-    "terminal.integrated.env.linux": {},
-    "vue.updateImportsOnFileMove.enabled": true,
-    "window.commandCenter": true,
-
-    "turboConsoleLog.delimiterInsideMessage": "-",
-    "turboConsoleLog.quote": "'",
-    "turboConsoleLog.includeFileNameAndLineNum": false,
-
-    "vim.leader": " ",
-    "vim.easymotion": true,
-    "vim.easymotionMarkerBackgroundColor": "#FBD87F",
-    "vim.easymotionMarkerFontWeight": "bold",
-    "vim.easymotionMarkerForegroundColorOneChar": "#DE0079",
-    "vim.easymotionKeys": "hklyuiopnmqwertzxcvbasdgjf",
-    "vim.useSystemClipboard": true,
-    "vim.foldfix": true,
-    "vim.hlsearch": true,
-    "vim.highlightedyank.enable": true,
-    "vim.highlightedyank.color": "rgba(230, 97, 89, 0.7)",
-    "vim.highlightedyank.textColor": "white",
-    "vim.normalModeKeyBindings": [
+    {
+      "before": [","],
+      "commands": [
+        "vspacecode.space",
         {
-            "before": ["leader", "k"],
-            "commands": ["editor.action.showHover"]
-        },
-        {
-            "before": ["]", "d"],
-            "commands": ["editor.action.marker.next"]
-        },
-        {
-            "before": ["[", "d"],
-            "commands": ["editor.action.marker.prev"]
+          "command": "whichkey.triggerKey",
+          "args": "m"
         }
-    ],
-    "vim.insertModeKeyBindings": [
-        {
-            "before": ["j", "k"],
-            "after": ["<Esc>"]
-        }
-    ],
-    "vim.visualModeKeyBindings": [
-        {
-            "before": [">"],
-            "commands": ["editor.action.indentLines"]
-        },
-        {
-            "before": ["<"],
-            "commands": ["editor.action.outdentLines"]
-        }
-    ],
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "before": ["<space>"],
-            "commands": ["vspacecode.space"]
-        },
-        {
-            "before": [","],
-            "commands": [
-                "vspacecode.space",
-                {
-                    "command": "whichkey.triggerKey",
-                    "args": "m"
-                }
-            ]
-        }
-    ],
-    "vim.visualModeKeyBindingsNonRecursive": [
-        {
-            "before": ["<space>"],
-            "commands": ["vspacecode.space"]
-        },
-        {
-            "before": [","],
-            "commands": [
-                "vspacecode.space",
-                {
-                    "command": "whichkey.triggerKey",
-                    "args": "m"
-                }
-            ]
-        },
-        {
-            "before": [">"],
-            "commands": ["editor.action.indentLines"]
-        },
-        {
-            "before": ["<"],
-            "commands": ["editor.action.outdentLines"]
-        }
-    ],
-
-    "todo-tree.general.statusBar": "tags",
-    "todo-tree.general.tags": [
-        "BUG",
-        "HACK",
-        "FIXME",
-        "TODO",
-        "NOTE",
-        "XXX",
-        "[ ]",
-        "[x]",
-        "ALLEN"
-    ],
-    "todo-tree.highlights.customHighlight": {
-        "TODO": {
-            "background": "#f5c018",
-            "foreground": "#000",
-            "iconColour": "#f5c018",
-            "fontStyle": "italic",
-            "type": "text-and-comment"
-        },
-        "FIXME": {
-            "background": "#d9444a",
-            "foreground": "#000",
-            "iconColour": "#d9444a",
-            "fontStyle": "italic",
-            "type": "text-and-comment"
-        },
-        "NOTE": {
-            "background": "#6244d9",
-            "foreground": "#fff",
-            "iconColour": "#6244d9",
-            "fontStyle": "italic",
-            "type": "text-and-comment"
-        },
-        "ALLEN": {
-            "background": "#f5c018",
-            "foreground": "#000",
-            "iconColour": "#f5c018",
-            "fontStyle": "italic",
-            "type": "text-and-comment"
-        }
+      ]
     },
-    "todo-tree.tree.buttons.scanMode": true,
-
-    "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
-
-    "projectManager.git.baseFolders": ["$home/bebit-tech"],
-    "projectManager.sortList": "Recent",
-
-    "sortJSON.orderOverride": ["name", "version", "description"],
-    "sortJSON.orderUnderride": ["dependencies", "devDependencies"],
-
-    "extensions.experimental.affinity": {
-        "asvetliakov.vscode-neovim": 1
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
     },
-    "[javascriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
+    }
+  ],
+
+  "todo-tree.general.statusBar": "tags",
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "NOTE",
+    "XXX",
+    "[ ]",
+    "[x]",
+    "ALLEN"
+  ],
+  "todo-tree.highlights.customHighlight": {
+    "TODO": {
+      "background": "#f5c018",
+      "foreground": "#000",
+      "iconColour": "#f5c018",
+      "fontStyle": "italic",
+      "type": "text-and-comment"
     },
-    "windsurf.cascadeOpenOnReload": false,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": false,
-    "[yaml]": {
-        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    "FIXME": {
+      "background": "#d9444a",
+      "foreground": "#000",
+      "iconColour": "#d9444a",
+      "fontStyle": "italic",
+      "type": "text-and-comment"
     },
-    "[json]": {
-        "editor.formatOnSave": false
+    "NOTE": {
+      "background": "#6244d9",
+      "foreground": "#fff",
+      "iconColour": "#6244d9",
+      "fontStyle": "italic",
+      "type": "text-and-comment"
     },
+    "ALLEN": {
+      "background": "#f5c018",
+      "foreground": "#000",
+      "iconColour": "#f5c018",
+      "fontStyle": "italic",
+      "type": "text-and-comment"
+    }
+  },
+  "todo-tree.tree.buttons.scanMode": true,
+
+  "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+
+  "projectManager.git.baseFolders": ["$home/bebit-tech"],
+  "projectManager.sortList": "Recent",
+
+  "sortJSON.orderOverride": ["name", "version", "description"],
+  "sortJSON.orderUnderride": ["dependencies", "devDependencies"],
+
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "windsurf.cascadeOpenOnReload": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "[yaml]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  }
 }

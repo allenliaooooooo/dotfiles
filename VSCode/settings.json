@@ -1,8 +1,6 @@
 {
-    "editor.rulers": [
-        100,
-        120
-    ],
+    "windsurf.autocompleteSpeed": "fast",
+    "editor.rulers": [100, 120],
     "editor.fontFamily": "FiraCode Nerd Font, Menlo, Monaco, 'Courier New', monospace",
     "editor.cursorBlinking": "smooth",
     "editor.cursorSmoothCaretAnimation": "on",
@@ -15,19 +13,27 @@
 
     "diffEditor.ignoreTrimWhitespace": false,
 
-    "workbench.iconTheme": "catppuccin-mocha",
+    "workbench.iconTheme": "catppuccin-frappe",
     "workbench.tree.indent": 15,
     "workbench.tree.renderIndentGuides": "always",
     "workbench.colorCustomizations": {
         "tree.indentGuidesStroke": "#05ef3c"
     },
-    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.colorTheme": "Catppuccin Frappé",
 
     "[python]": {
-        "editor.formatOnType": true
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll": "explicit",
+          "source.organizeImports": "explicit"
+        }
     },
+    "ruff.organizeImports": true,
+    "ruff.lint.args": ["--config", "pyproject.toml"],
+    "ruff.format.args": ["--config", "pyproject.toml"],
     "[javascript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
 
     "terminal.integrated.env.linux": {},
@@ -66,32 +72,19 @@
     ],
     "vim.insertModeKeyBindings": [
         {
-            "before": [
-                "j",
-                "k"
-            ],
-            "after": [
-                "<Esc>"
-            ]
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
         }
     ],
     "vim.visualModeKeyBindings": [
         {
-            "before": [
-                ">"
-            ],
-            "commands": [
-                "editor.action.indentLines"
-            ]
+            "before": [">"],
+            "commands": ["editor.action.indentLines"]
         },
         {
-            "before": [
-                "<"
-            ],
-            "commands": [
-                "editor.action.outdentLines"
-            ]
-        },
+            "before": ["<"],
+            "commands": ["editor.action.outdentLines"]
+        }
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
         {
@@ -174,488 +167,13 @@
             "iconColour": "#f5c018",
             "fontStyle": "italic",
             "type": "text-and-comment"
-        },
+        }
     },
     "todo-tree.tree.buttons.scanMode": true,
 
-    "cSpell.userWords": [
-        "TENANTBUILD"
-    ],
-
-    "VSCodeCounter.languages": {
-        "cpp": {
-            "aliases": [],
-            "filenames": [],
-            "extensions": [],
-            "lineComments": [],
-            "blockComments": [],
-            "blockStrings": [
-                [
-                    "R(\"",
-                    "\")"
-                ]
-            ]
-        },
-        "javascript": {
-            "aliases": [],
-            "filenames": [],
-            "extensions": [
-                ".js"
-            ],
-            "lineComments": [],
-            "blockComments": [
-                [
-                    "{/*",
-                    "*/}"
-                ]
-            ],
-            "blockStrings": [
-                [
-                    "`",
-                    "`"
-                ]
-            ]
-        },
-        "javascriptreact": {
-            "aliases": [],
-            "filenames": [],
-            "extensions": [],
-            "lineComments": [],
-            "blockComments": [
-                [
-                    "{/*",
-                    "*/}"
-                ]
-            ],
-            "blockStrings": [
-                [
-                    "`",
-                    "`"
-                ]
-            ]
-        },
-        "typescriptreact": {
-            "aliases": [],
-            "filenames": [],
-            "extensions": [],
-            "lineComments": [],
-            "blockComments": [
-                [
-                    "{/*",
-                    "*/}"
-                ]
-            ],
-            "blockStrings": [
-                [
-                    "`",
-                    "`"
-                ]
-            ]
-        },
-        "jsonc": {
-            "aliases": [],
-            "filenames": [
-                "settings.json",
-                "launch.json",
-                "tasks.json",
-                "keybindings.json",
-                "extensions.json",
-                "argv.json",
-                "profiles.json",
-                "devcontainer.json",
-                ".devcontainer.json",
-                ".eslintrc.json"
-            ],
-            "extensions": [
-                ".code-workspace",
-                "language-configuration.json",
-                "icon-theme.json",
-                "color-theme.json",
-                ".code-snippets",
-                "cspell-ext.json",
-                "cspell-default.json",
-                "cspell.json",
-                "cspell.config.json",
-                "cSpell.json"
-            ],
-            "lineComments": [],
-            "blockComments": [],
-            "blockStrings": []
-        },
-        "json": {
-            "aliases": [],
-            "filenames": [
-                "Pipfile.lock"
-            ],
-            "extensions": [
-                ".code-profile"
-            ],
-            "lineComments": [],
-            "blockComments": [],
-            "blockStrings": []
-        },
-        "ignore": {
-            "aliases": [
-                "Ignore",
-                "ignore"
-            ],
-            "filenames": [
-                ".vscodeignore"
-            ],
-            "extensions": [
-                ".gitignore_global",
-                ".gitignore",
-                ".npmignore",
-                ".eslintignore"
-            ],
-            "lineComments": [
-                "#"
-            ],
-            "blockComments": [],
-            "blockStrings": []
-        },
-        "git-commit": {
-            "aliases": [
-                "Git Commit Message",
-                "git-commit"
-            ],
-            "filenames": [
-                "COMMIT_EDITMSG",
-                "MERGE_MSG"
-            ],
-            "extensions": [],
-            "lineComments": [
-                "#"
-            ],
-            "blockComments": [
-                [
-                    "#",
-                    " "
-                ]
-            ],
-            "blockStrings": []
-        },
-        "git-rebase": {
-            "aliases": [
-                "Git Rebase Message",
-                "git-rebase"
-            ],
-            "filenames": [
-                "git-rebase-todo"
-            ],
-            "extensions": [],
-            "lineComments": [
-                "#"
-            ],
-            "blockComments": [
-                [
-                    "#",
-                    " "
-                ]
-            ],
-            "blockStrings": []
-        },
-        "markdown-math": {
-            "aliases": [],
-            "filenames": [],
-            "extensions": [],
-            "lineComments": [],
-            "blockComments": [],
-            "blockStrings": []
-        },
-        "properties": {
-            "aliases": [],
-            "filenames": [],
-            "extensions": [
-                ".npmrc"
-            ],
-            "lineComments": [],
-            "blockComments": [],
-            "blockStrings": []
-        },
-        "search-result": {
-            "aliases": [
-                "Search Result"
-            ],
-            "filenames": [],
-            "extensions": [
-                ".code-search"
-            ],
-            "lineComments": [],
-            "blockComments": [],
-            "blockStrings": []
-        },
-        "csv": {
-            "aliases": [
-                "CSV",
-                "csv"
-            ],
-            "filenames": [],
-            "extensions": [
-                ".csv"
-            ],
-            "lineComments": [],
-            "blockComments": [],
-            "blockStrings": []
-        },
-        "tsv": {
-            "aliases": [
-                "TSV",
-                "tsv"
-            ],
-            "filenames": [],
-            "extensions": [
-                ".tsv",
-                ".tab"
-            ],
-            "lineComments": [],
-            "blockComments": [],
-            "blockStrings": []
-        },
-        "csv (pipe)": {
-            "aliases": [
-                "CSV (pipe)",
-                "csv (pipe)"
-            ],
-            "filenames": [],
-            "extensions": [],
-            "lineComments": [],
-            "blockComments": [],
-            "blockStrings": []
-        },
-        "csv (whitespace)": {
-            "aliases": [
-                "CSV (whitespace)",
-                "csv (whitespace)"
-            ],
-            "filenames": [],
-            "extensions": [],
-            "lineComments": [],
-            "blockComments": [],
-            "blockStrings": []
-        },
-        "csv (semicolon)": {
-            "aliases": [
-                "CSV (semicolon)",
-                "csv (semicolon)"
-            ],
-            "filenames": [],
-            "extensions": [],
-            "lineComments": [],
-            "blockComments": [],
-            "blockStrings": []
-        },
-        "dynamic csv": {
-            "aliases": [
-                "Dynamic CSV",
-                "dynamic csv"
-            ],
-            "filenames": [],
-            "extensions": [],
-            "lineComments": [],
-            "blockComments": [],
-            "blockStrings": []
-        },
-        "rainbow hover markup": {
-            "aliases": [],
-            "filenames": [],
-            "extensions": [],
-            "lineComments": [],
-            "blockComments": [],
-            "blockStrings": []
-        },
-        "toml": {
-            "aliases": [],
-            "filenames": [
-                "pyproject.toml",
-                ".isort",
-                "Pipfile",
-                "poetry.lock"
-            ],
-            "extensions": [],
-            "lineComments": [],
-            "blockComments": [],
-            "blockStrings": []
-        },
-        "jinja": {
-            "aliases": [
-                "Jinja"
-            ],
-            "filenames": [],
-            "extensions": [
-                ".j2",
-                ".jinja2"
-            ],
-            "lineComments": [],
-            "blockComments": [],
-            "blockStrings": []
-        },
-        "pip-requirements": {
-            "aliases": [
-                "pip requirements",
-                "requirements.txt"
-            ],
-            "filenames": [
-                "constraints.txt",
-                "requirements.in",
-                "requirements.txt"
-            ],
-            "extensions": [],
-            "lineComments": [
-                "#"
-            ],
-            "blockComments": [],
-            "blockStrings": []
-        },
-        "yaml": {
-            "aliases": [],
-            "filenames": [
-                ".condarc"
-            ],
-            "extensions": [],
-            "lineComments": [],
-            "blockComments": [],
-            "blockStrings": []
-        },
-        "ini": {
-            "aliases": [],
-            "filenames": [
-                ".flake8",
-                ".pep8",
-                ".pylintrc",
-                ".pypirc"
-            ],
-            "extensions": [],
-            "lineComments": [],
-            "blockComments": [],
-            "blockStrings": []
-        },
-        "raw": {
-            "aliases": [],
-            "filenames": [],
-            "extensions": [],
-            "lineComments": [],
-            "blockComments": [],
-            "blockStrings": []
-        },
-        "julia": {
-            "aliases": [
-                "Julia",
-                "julia"
-            ],
-            "filenames": [],
-            "extensions": [
-                ".jl"
-            ],
-            "lineComments": [],
-            "blockComments": [],
-            "blockStrings": []
-        },
-        "stylus": {
-            "aliases": [
-                "Stylus",
-                "stylus"
-            ],
-            "filenames": [],
-            "extensions": [
-                ".styl",
-                ".stylus"
-            ],
-            "lineComments": [
-                "//"
-            ],
-            "blockComments": [
-                [
-                    "/*",
-                    "*/"
-                ]
-            ],
-            "blockStrings": []
-        },
-        "vue": {
-            "aliases": [],
-            "filenames": [],
-            "extensions": [
-                ".vue"
-            ],
-            "lineComments": [],
-            "blockComments": [
-                [
-                    "<!--",
-                    "-->"
-                ]
-            ],
-            "blockStrings": []
-        },
-        "markdown": {
-            "aliases": [],
-            "filenames": [],
-            "extensions": [],
-            "lineComments": [],
-            "blockComments": [],
-            "blockStrings": []
-        },
-        "html": {
-            "aliases": [],
-            "filenames": [],
-            "extensions": [],
-            "lineComments": [],
-            "blockComments": [],
-            "blockStrings": []
-        },
-        "jade": {
-            "aliases": [],
-            "filenames": [],
-            "extensions": [],
-            "lineComments": [],
-            "blockComments": [],
-            "blockStrings": []
-        },
-        "plaintext": {
-            "aliases": [],
-            "filenames": [],
-            "extensions": [],
-            "lineComments": [],
-            "blockComments": [],
-            "blockStrings": []
-        },
-        "vue-injection-markdown": {
-            "aliases": [],
-            "filenames": [],
-            "extensions": [],
-            "lineComments": [],
-            "blockComments": [],
-            "blockStrings": []
-        },
-        "vue-directives": {
-            "aliases": [],
-            "filenames": [],
-            "extensions": [],
-            "lineComments": [],
-            "blockComments": [],
-            "blockStrings": []
-        },
-        "vue-interpolations": {
-            "aliases": [],
-            "filenames": [],
-            "extensions": [],
-            "lineComments": [],
-            "blockComments": [],
-            "blockStrings": []
-        },
-        "vue-sfc-style-variable-injection": {
-            "aliases": [],
-            "filenames": [],
-            "extensions": [],
-            "lineComments": [],
-            "blockComments": [],
-            "blockStrings": []
-        }
-    },
-
     "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
 
-    "projectManager.git.baseFolders": ["$home/Documents/genie-networks/projects"],
+    "projectManager.git.baseFolders": ["$home/bebit-tech"],
     "projectManager.sortList": "Recent",
 
     "sortJSON.orderOverride": ["name", "version", "description"],
@@ -663,5 +181,17 @@
 
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "windsurf.cascadeOpenOnReload": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false,
+    "[yaml]": {
+        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    },
+    "[json]": {
+        "editor.formatOnSave": false
     },
 }

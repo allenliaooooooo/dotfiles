@@ -11,9 +11,11 @@ ln -sv ~/dotfiles/VSCode/keybindings.json /<vscode-path>/keybindings.json
 
 Install AstroNvim then run:
 
-```sh
-ln -sv ~/dotfiles/astroNvim/.config/nvim/lua/user  ~/.config/nvim/lua/user
-```
+- For Neovim 0.8+ (NOT including nightlty) and AstroNvim v3 (Maybe somewhere around `v3.3x.x`):
+
+  ```sh
+  ln -sv ~/dotfiles/astroNvim/.config/nvim/lua/user  ~/.config/nvim/lua/user
+  ```
 
 ### ColorScheme
 

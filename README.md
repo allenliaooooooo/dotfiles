@@ -1,3 +1,11 @@
+## `.bash_aliases`
+
+```sh
+ln -sv ~/dotfiles/.bash_aliases  ~/.bash_aliases
+```
+
+The `vv` command needs [fd](https://github.com/sharkdp/fd) and [fzf](https://github.com/junegunn/fzf).
+
 ## VSCode
 
 Backup your current `settings.json` and `keybindings.json` before run the following command.
@@ -7,14 +15,48 @@ ln -sv ~/dotfiles/VSCode/settings.json /<vscode-path>/settings.json
 ln -sv ~/dotfiles/VSCode/keybindings.json /<vscode-path>/keybindings.json
 ```
 
-## AstroNvim
+## Neovim
+
+### AstroNvim
 
 Install AstroNvim then run:
+
+- For Neovim 0.9+ (NOT including nightlty) and AstroNvim v4 (`v4.29.0` when this README is edited):
+  ```sh
+  ln -sv ~/dotfiles/nvim-astronvim  ~/.config/nvim-astronvim
+  ```
 
 - For Neovim 0.8+ (NOT including nightlty) and AstroNvim v3 (Maybe somewhere around `v3.3x.x`):
 
   ```sh
   ln -sv ~/dotfiles/astroNvim/.config/nvim/lua/user  ~/.config/nvim/lua/user
+  ```
+
+### LunarVim
+
+Install LunarVim then run:
+
+- For Neovim 0.9+ (NOT including nightlty) and LunarVim v1 (`v1.4.0` when this README is edited):
+  ```sh
+  ln -sv ~/dotfiles/lvim  ~/.config/lvim
+  ```
+
+### LazyVim
+
+Install LazyVim then run:
+
+- For Neovim 0.9+ (NOT including nightlty) and LazyVim v1 (`v14.3.0` when this README is edited):
+  ```sh
+  ln -sv ~/dotfiles/nvim-lazyvim  ~/.config/nvim-lazyvim
+  ```
+
+### [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
+
+Install LunarVim then run:
+
+- For Neovim 0.9+ (NOT including nightlty) and LunarVim v1 (`v1.4.0` when this README is edited):
+  ```sh
+  ln -sv ~/dotfiles/nvim-kickstart  ~/.config/nvim-kickstart
   ```
 
 ### ColorScheme
@@ -44,3 +86,4 @@ ln -sv ~/dotfiles/.vim/ ~/.vim
 - YouCompleteMe
 
 Please follow the [Installation document](https://github.com/ycm-core/YouCompleteMe#installation) to install.
+

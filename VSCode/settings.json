@@ -1,5 +1,4 @@
 {
-  "windsurf.autocompleteSpeed": "fast",
   "editor.rulers": [100, 120],
   "editor.fontFamily": "FiraCode Nerd Font, Menlo, Monaco, 'Courier New', monospace",
   "editor.cursorBlinking": "smooth",
@@ -185,10 +184,13 @@
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "windsurf.cascadeOpenOnReload": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "[yaml]": {
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
-  }
+  },
+  "githubPullRequests.pullBranch": "never",
+
+  "windsurf.cascadeOpenOnReload": false,
+  "windsurf.enableSupercomplete": false
 }

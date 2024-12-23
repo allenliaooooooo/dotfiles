@@ -22,6 +22,7 @@ return {
       ensure_installed = {
         "stylua",
         -- add more arguments for adding more null-ls sources
+        "prettierd",
       },
     },
   },

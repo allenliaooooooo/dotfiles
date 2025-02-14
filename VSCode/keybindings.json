@@ -39,7 +39,6 @@
     "command": "deleteFile",
     "when": "filesExplorerFocus && !inputFocus"
   },
-
   // {
   //   "key": "cmd+o",
   //   "command": "projectManager.listGitProjects#sideBarGit"

@@ -55,6 +55,7 @@
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.color": "rgba(230, 97, 89, 0.7)",
   "vim.highlightedyank.textColor": "white",
+  "vim.statusBarColorControl": false,
   "vim.normalModeKeyBindings": [
     {
       "before": ["leader", "k"],
@@ -192,5 +193,6 @@
   "githubPullRequests.pullBranch": "never",
 
   "windsurf.cascadeOpenOnReload": false,
-  "windsurf.enableSupercomplete": false
+  "gitlens.ai.model": "openai:gpt-4o",
+  "windsurf.autoExecutionPolicy": "off"
 }

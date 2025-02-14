@@ -1,5 +1,5 @@
-# Choose neovim distributions by `vv` command
-vv() {
+# Choose neovim distributions by `nvims` command
+nvims() {
   # Assumes all configs exist in directories named ~/.config/*
   local config=$(fd --max-depth 1 --glob 'nvim-*' ~/.config | fzf --prompt="Neovim Configs > " --height=~50% --layout=reverse --border --exit-0)
 

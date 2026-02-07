@@ -7,5 +7,5 @@ nvims() {
   [[ -z $config ]] && echo "No config selected" && return
 
   # Open Neovim with the selected config
-  NVIM_APPNAME=$(basename $config) nvim $@
+  NVIM_APPNAME=$(basename $config) command nvim $@
 }

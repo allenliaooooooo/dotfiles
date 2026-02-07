@@ -11,28 +11,24 @@
   "editor.suggest.insertMode": "replace",
 
   "diffEditor.ignoreTrimWhitespace": false,
-
-  "workbench.iconTheme": "catppuccin-frappe",
   "workbench.tree.indent": 15,
   "workbench.tree.renderIndentGuides": "always",
   "workbench.colorCustomizations": {
-    "tree.indentGuidesStroke": "#05ef3c"
+    "tree.indentGuidesStroke": "#05ef3c",
   },
-  "workbench.colorTheme": "Catppuccin Frappé",
 
   "[python]": {
-    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.defaultFormatter": null,
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
       "source.fixAll": "explicit",
-      "source.organizeImports": "explicit"
-    }
+      "source.organizeImports": "explicit",
+    },
+    "diffEditor.ignoreTrimWhitespace": true,
   },
   "ruff.organizeImports": true,
-  "ruff.lint.args": ["--config", "pyproject.toml"],
-  "ruff.format.args": ["--config", "pyproject.toml"],
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
 
   "terminal.integrated.env.linux": {},
@@ -59,37 +55,37 @@
   "vim.normalModeKeyBindings": [
     {
       "before": ["leader", "k"],
-      "commands": ["editor.action.showHover"]
+      "commands": ["editor.action.showHover"],
     },
     {
       "before": ["]", "d"],
-      "commands": ["editor.action.marker.next"]
+      "commands": ["editor.action.marker.next"],
     },
     {
       "before": ["[", "d"],
-      "commands": ["editor.action.marker.prev"]
-    }
+      "commands": ["editor.action.marker.prev"],
+    },
   ],
   "vim.insertModeKeyBindings": [
     {
       "before": ["j", "k"],
-      "after": ["<Esc>"]
-    }
+      "after": ["<Esc>"],
+    },
   ],
   "vim.visualModeKeyBindings": [
     {
       "before": [">"],
-      "commands": ["editor.action.indentLines"]
+      "commands": ["editor.action.indentLines"],
     },
     {
       "before": ["<"],
-      "commands": ["editor.action.outdentLines"]
-    }
+      "commands": ["editor.action.outdentLines"],
+    },
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<space>"],
-      "commands": ["vspacecode.space"]
+      "commands": ["vspacecode.space"],
     },
     {
       "before": [","],
@@ -97,15 +93,23 @@
         "vspacecode.space",
         {
           "command": "whichkey.triggerKey",
-          "args": "m"
-        }
-      ]
-    }
+          "args": "m",
+        },
+      ],
+    },
+    {
+      "before": ["<C-d>"],
+      "after": ["1", "5", "g", "j", "z", "z"],
+    },
+    {
+      "before": ["<C-u>"],
+      "after": ["1", "5", "g", "k", "z", "z"],
+    },
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
       "before": ["<space>"],
-      "commands": ["vspacecode.space"]
+      "commands": ["vspacecode.space"],
     },
     {
       "before": [","],
@@ -113,18 +117,18 @@
         "vspacecode.space",
         {
           "command": "whichkey.triggerKey",
-          "args": "m"
-        }
-      ]
+          "args": "m",
+        },
+      ],
     },
     {
       "before": [">"],
-      "commands": ["editor.action.indentLines"]
+      "commands": ["editor.action.indentLines"],
     },
     {
       "before": ["<"],
-      "commands": ["editor.action.outdentLines"]
-    }
+      "commands": ["editor.action.outdentLines"],
+    },
   ],
 
   "todo-tree.general.statusBar": "tags",
@@ -137,7 +141,7 @@
     "XXX",
     "[ ]",
     "[x]",
-    "ALLEN"
+    "ALLEN",
   ],
   "todo-tree.highlights.customHighlight": {
     "TODO": {
@@ -145,54 +149,83 @@
       "foreground": "#000",
       "iconColour": "#f5c018",
       "fontStyle": "italic",
-      "type": "text-and-comment"
+      "type": "text-and-comment",
     },
     "FIXME": {
       "background": "#d9444a",
       "foreground": "#000",
       "iconColour": "#d9444a",
       "fontStyle": "italic",
-      "type": "text-and-comment"
+      "type": "text-and-comment",
     },
     "NOTE": {
       "background": "#6244d9",
       "foreground": "#fff",
       "iconColour": "#6244d9",
       "fontStyle": "italic",
-      "type": "text-and-comment"
+      "type": "text-and-comment",
     },
     "ALLEN": {
       "background": "#f5c018",
       "foreground": "#000",
       "iconColour": "#f5c018",
       "fontStyle": "italic",
-      "type": "text-and-comment"
-    }
+      "type": "text-and-comment",
+    },
   },
   "todo-tree.tree.buttons.scanMode": true,
 
   "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
 
-  "projectManager.git.baseFolders": ["$home/bebit-tech"],
+  "projectManager.git.baseFolders": ["$home/Projects"],
   "projectManager.sortList": "Recent",
 
   "sortJSON.orderOverride": ["name", "version", "description"],
   "sortJSON.orderUnderride": ["dependencies", "devDependencies"],
 
   "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
+    "asvetliakov.vscode-neovim": 1,
   },
   "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "[yaml]": {
-    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
   },
   "githubPullRequests.pullBranch": "never",
 
+  "[markdown]": {
+    "editor.formatOnSave": false,
+  },
+
   "windsurf.cascadeOpenOnReload": false,
   "gitlens.ai.model": "openai:gpt-4o",
-  "windsurf.autoExecutionPolicy": "off"
+  "windsurf.autoExecutionPolicy": "off",
+  "windsurf.explainAndFixInCurrentConversation": true,
+  "windsurf.autocompleteSpeed": "fast",
+  "windsurf.cascadeWebSearchDisabled": true,
+  "windsurf.chatFontSize": "default",
+  "windsurf.rememberLastModelSelection": true,
+  "windsurf.openRecentConversation": true,
+  "circleci.hostUrl": "",
+  "cSpell.userWords": ["Cascader"],
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "editor.smoothScrolling": true,
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+  },
+  "roo-cline.allowedCommands": ["git log", "git diff", "git show"],
+  "roo-cline.deniedCommands": [],
+  "python.analysis.autoImportCompletions": true,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+  },
+  "editor.minimap.enabled": false,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "claudeCode.preferredLocation": "panel",
 }

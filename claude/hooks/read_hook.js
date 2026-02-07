@@ -11,7 +11,7 @@ async function main() {
     toolArgs.tool_input?.file_path || toolArgs.tool_input?.path || "";
 
   // Check if Claude is trying to read the .env file
-  if (readPath.includes(".env")) {
+  if (readPath.includes(".env") && !readPath.includes("example")) {
     console.error("You cannot read the .env file");
     process.exit(2);
   }

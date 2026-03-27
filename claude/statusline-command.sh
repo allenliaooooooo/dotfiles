@@ -7,6 +7,13 @@ model_name=$(echo "$json_input" | jq -r '.model.display_name // .model.id')
 version=$(echo "$json_input" | jq -r '.version // "unknown"')
 effort=$(jq -r '.effortLevel // empty' "$HOME/.claude/settings.json" 2>/dev/null)
 
+# Session context
+total_duration_ms=$(echo "$json_input" | jq -r '.cost.total_duration_ms // empty')
+total_cost=$(echo "$json_input" | jq -r '.cost.total_cost_usd // empty')
+lines_added=$(echo "$json_input" | jq -r '.cost.total_lines_added // empty')
+lines_removed=$(echo "$json_input" | jq -r '.cost.total_lines_removed // empty')
+ctx_used_pct=$(echo "$json_input" | jq -r '.context_window.used_percentage // empty')
+
 # 獲取相對路徑顯示
 if [[ -n "$project_dir" && "$cwd" == "$project_dir"* ]]; then
     rel_path=${cwd#$project_dir}
@@ -66,6 +73,64 @@ format_reset() {
     fi
 }
 
+# Format milliseconds to human-readable duration
+format_duration() {
+    local ms=$1
+    if [[ -z "$ms" || "$ms" == "null" ]]; then
+        echo ""
+        return
+    fi
+    local total_sec=$(( ms / 1000 ))
+    local hours=$(( total_sec / 3600 ))
+    local mins=$(( (total_sec % 3600) / 60 ))
+    local secs=$(( total_sec % 60 ))
+    if (( hours > 0 )); then
+        printf "%dh %dm" "$hours" "$mins"
+    elif (( mins > 0 )); then
+        printf "%dm %ds" "$mins" "$secs"
+    else
+        printf "%ds" "$secs"
+    fi
+}
+
+# Build session info lines
+session_lines=""
+
+# Session stats: duration, cost, lines changed
+session_stats=""
+if [[ -n "$total_duration_ms" ]]; then
+    duration_str=$(format_duration "$total_duration_ms")
+    session_stats="⏱ \033[33m${duration_str}\033[0m"
+fi
+if [[ -n "$total_cost" && "$total_cost" != "null" ]]; then
+    cost_formatted=$(printf '$%.2f' "$total_cost")
+    [[ -n "$session_stats" ]] && session_stats+="  "
+    session_stats+="\033[35m${cost_formatted}\033[0m"
+fi
+if [[ -n "$lines_added" || -n "$lines_removed" ]]; then
+    la=${lines_added:-0}
+    lr=${lines_removed:-0}
+    if (( la > 0 || lr > 0 )); then
+        [[ -n "$session_stats" ]] && session_stats+="  "
+        session_stats+="\033[32m+${la}\033[0m/\033[31m-${lr}\033[0m"
+    fi
+fi
+[[ -n "$session_stats" ]] && session_lines="\nsession  ${session_stats}"
+
+# Context window usage bar
+if [[ -n "$ctx_used_pct" ]]; then
+    ctx_int=${ctx_used_pct%.*}
+    if (( ctx_int >= 80 )); then
+        ctx_color="31"  # red
+    elif (( ctx_int >= 50 )); then
+        ctx_color="33"  # yellow
+    else
+        ctx_color="32"  # green
+    fi
+    ctx_bar=$(build_bar "$ctx_int" "$ctx_color")
+    session_lines="${session_lines}\ncontext  ${ctx_bar} ${ctx_int}%"
+fi
+
 # Rate limit info
 five_hour_pct=$(echo "$json_input" | jq -r '.rate_limits.five_hour.used_percentage // empty')
 five_hour_reset=$(echo "$json_input" | jq -r '.rate_limits.five_hour.resets_at // empty')
@@ -100,4 +165,4 @@ printf "📁 \033[34m%s\033[0m | %s\033[32m%s\033[0m | 🤖 \033[36m%s\033[0m | 
     "$(echo "$git_info" | cut -d' ' -f2-)" \
     "$model_name${effort:+ ($effort)}" \
     "$current_time" \
-    "$rate_lines"
+    "${session_lines}${rate_lines}"
